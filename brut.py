@@ -12,7 +12,7 @@ def hash_password(password):
 	return hashlib.sha256(password.encode()).hexdigest()
 
 def guess(hash):
-	for l in range(7): #change the range if you expect the dehashed value to be less or more
+	for l in range(4): #change the range if you expect the dehashed value to be longer or shorter)
 		for try_ in itertools.product(alf, repeat=l + 1):
 			if hash_password(''.join(try_).strip()) == hash:
 				print(''.join(try_))
